@@ -4,8 +4,8 @@ const initialState = {
     // Where are you right now, setting up the intial values
     origin: null,
     destination: null,
-    travelTimeInformation: null
-}
+    travelTimeInformation: null,
+};
 
 export const navSlice = createSlice({
     name: 'nav',
