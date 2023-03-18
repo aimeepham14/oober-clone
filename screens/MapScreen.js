@@ -1,14 +1,26 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Text, View, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard, TouchableOpacity } from 'react-native'
 import React from 'react'
+import tw from "tailwind-react-native-classnames";
+import Map from "../components/Map";
+import MapView from 'react-native-maps';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const MapScreen = () => {
+    const Stack = createNativeStackNavigator();
+
   return (
     <View>
-      <Text>Here is our map screen...</Text>
-    </View>
-  )
-}
+        <View style={tw`h-1/2`}>
+            <Map /> 
+        </View>
 
-export default MapScreen
+        <View style={tw`h-1/2`}>
+
+        </View>
+    </View>
+  );
+};
+
+export default MapScreen;
 
 const styles = StyleSheet.create({})
