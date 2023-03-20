@@ -4,9 +4,11 @@ import tw from "tailwind-react-native-classnames";
 import Map from "../components/Map";
 import MapView from 'react-native-maps';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { useNavigation } from '@react-navigation/native';
 
 const MapScreen = () => {
     const Stack = createNativeStackNavigator();
+    const navigation = useNavigation();
 
   return (
     <View>
@@ -23,4 +25,3 @@ const MapScreen = () => {
 
 export default MapScreen;
 
-const styles = StyleSheet.create({})

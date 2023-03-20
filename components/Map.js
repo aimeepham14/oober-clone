@@ -1,16 +1,19 @@
-import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { View, Text } from 'react-native';
+import React, { useRef, useEffect } from 'react';
+import { useDispatch, useSelector } from "react-redux";
 import MapView, { Marker } from 'react-native-maps';
-import tw from "tailwind-react-native-classnames";
-import { useSelector } from "react-redux";
 import { selectOrigin } from "../slices/navSlice";
+import tw from "tailwind-react-native-classnames";
+
+
 
 const Map = () => {
     const origin = useSelector(selectOrigin);
 
+
     return (
         <MapView
-            style={tw`flex-1`} 
+            style={tw`flex-1`}
             mapType="mutedStandard"
             initialRegion={{
                 latitude: origin.location.lat,
@@ -19,19 +22,20 @@ const Map = () => {
                 longitudeDelta: 0.005,
             }}
         >
+
             {origin?.location && (
-                <Marker 
+                <Marker
                     coordinate={{
                         latitude: origin.location.lat,
-                        longtitude: origin.location.lng,
+                        longitude: origin.location.lng,
                     }}
-                    title="origin"
-                    description={origin?.description}
+                    title="Origin"
+                    description={origin.description}
                     identifier="origin"
                 />
             )}
         </MapView>
-    );
-};
+    )
+}
 
-export default Map;
+export default Map
