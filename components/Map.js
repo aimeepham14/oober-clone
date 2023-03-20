@@ -2,13 +2,24 @@ import { View, Text } from 'react-native';
 import React, { useRef, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import MapView, { Marker } from 'react-native-maps';
-import { selectOrigin } from "../slices/navSlice";
+import { selectDestination, selectOrigin } from "../slices/navSlice";
 import tw from "tailwind-react-native-classnames";
+import MapViewDirections from "react-native-maps-directions";
+import { GOOGLE_MAPS_APIKEY } from "@env";
 
 
 
 const Map = () => {
     const origin = useSelector(selectOrigin);
+    const destination = useSelector(selectDestination)
+    const mapRef = useRef(null);
+
+    useEffect(() => {
+        if (!origin || !destination) return;
+
+        // zoom and fit to markers
+        mapRef.current.fitToSuppliedMarkers([ ])
+    })
 
 
     return (
@@ -22,7 +33,15 @@ const Map = () => {
                 longitudeDelta: 0.005,
             }}
         >
-
+            {origin && destination && (
+                <MapViewDirections
+                    origin={origin.description}
+                    destination={destination.description}
+                    apikey={GOOGLE_MAPS_APIKEY}
+                    strokeWidth={3}
+                    strokeColor="black" 
+                /> 
+            )}
             {origin?.location && (
                 <Marker
                     coordinate={{
