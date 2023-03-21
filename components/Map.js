@@ -25,7 +25,7 @@ const Map = () => {
 
     const getTravelTime = async () => {
       fetch(
-        `https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins=${origin.description}&destinations=${destination.description}&key=${GOOGLE_MAPS_APIKEY}`
+        `https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${origin.description}&destinations=${destination.description}&key=${GOOGLE_MAPS_APIKEY}`
       )
         .then((res) => res.json())
         .then((data) => {
@@ -34,7 +34,7 @@ const Map = () => {
     };
     getTravelTime();
   }, [origin, destination]);
-  
+
   return (
     <MapView
       ref={mapRef}
@@ -52,8 +52,8 @@ const Map = () => {
           origin={origin.description}
           destination={destination.description}
           apikey={GOOGLE_MAPS_APIKEY}
-          strokeColor="black"
-          strokeWidth={3}
+          strokeColor="blue"
+          strokeWidth={4}
         />
       )}
       {origin?.location && (
