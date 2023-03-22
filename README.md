@@ -24,10 +24,9 @@ This is an Uber Clone for a React Native project. Features of this app includes 
 ![qr code](./assets/qrcode.png)
 
 ## Screenshots
-![home page](./assets/home-page.png)
-![map](./assets/map.png)
-![ride option](./assets/ride-option.png)
-
+![home page](./assets/home-page.jpg)
+![map](./assets/map.jpg)
+![ride option](./assets/ride-option.jpg)
 
 
 Some resources for this application were provided by Sonny Sangha.
