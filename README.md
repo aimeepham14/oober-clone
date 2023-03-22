@@ -3,6 +3,7 @@ This is an Uber Clone for a React Native project. Features of this app includes 
 
 # Installation Instructions
 - Download Expo Go app onto mobile device and scan code below:
+
 ![qr code](./assets/qrcode.png)
 
 ## Technology Stack:
