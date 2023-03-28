@@ -1,6 +1,8 @@
 # Oober
 This is an Uber Clone for a React Native project. Features of this app includes location search auto complete, start and end destination markers, vehicle type, trip overview with price, total miles, and ETA.
 
+Link to [Demo](https://www.loom.com/share/2e9cad04147c4dce87253aab1c0e96c0) here.
+
 ## Technology Stack:
 - React Native
 - React Native Maps
